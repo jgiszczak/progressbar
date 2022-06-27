@@ -1,0 +1,5 @@
+set(PROGRESSBAR_VERSION 2.0.0)
+@PACKAGE_INIT@
+set_and_check(PROGRESSBAR_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
+
+check_required_components(progressbar)

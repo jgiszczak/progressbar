@@ -61,14 +61,28 @@ int main(void)
     progressbar *fast = progressbar_new("Fast",20);
     for(int i=0; i < 20; i++) {
         usleep(SLEEP_US);
-        progressbar_inc(fast);
+        progressbar_update(fast, i+1);
     }
     progressbar_finish(fast);
 
-    progressbar *custom = progressbar_new_with_format("Custom",max,"<.>");
+    progressbar *custom = progressbar_new_with_format("Custom",max,"<. >");
     for(int i=0; i < max; i++) {
       usleep(SLEEP_US);
       progressbar_inc(custom);
+    }
+    progressbar_finish(custom);
+
+    custom = progressbar_new_with_format_and_tumbler("Slow",max*3,"[= ]", "/-\\|");
+    for(int i=0l;i < max*3; i++) {
+      usleep(SLEEP_US);
+      progressbar_inc(custom);
+    }
+    progressbar_finish(custom);
+
+    custom = progressbar_new_percent_with_format_and_tumbler("Percent","[= ]", "/-\\|");
+    for(int i=0l;i < max*3; i++) {
+      usleep(SLEEP_US);
+      progressbar_update_percent(custom, (double)i/(max*3));
     }
     progressbar_finish(custom);
 
