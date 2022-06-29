@@ -3,7 +3,8 @@
 * \author Trevor Fountain
 * \author Johannes Buchner
 * \author Erik Garrison
-* \date 2010-2014
+* \author Jonathan Giszczak
+* \date 2010-2022
 * \copyright BSD 3-Clause
 *
 * progressbar -- a C class (by convention) for displaying progress
